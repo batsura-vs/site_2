@@ -154,7 +154,7 @@ def sa():
 
 
 @app.route('/download/<f>')
-def s(f):
+def download(f):
     return send_from_directory(app.config["UPLOAD_FOLDER"], f)
 
 
@@ -180,7 +180,7 @@ def allfiles():
 @app.route('/deletef/<f>')
 @is_login
 def deletef(f):
-    if f in os.listdir(app.config["PAGES_FOLDER"]):
+    if f in os.listdir(app.config["UPLOAD_FOLDER"]):
         os.remove(f'{app.config["UPLOAD_FOLDER"]}/{f}')
     return redirect('/allfiles')
 
