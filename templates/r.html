@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>urls</title>
+    <link href="/static/bootstrap-5.0.0-beta2-dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <script src="/static/bootstrap-5.0.0-beta2-dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+<meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+<body>
+<div class="modal fade show" id="staticBackdropLive" data-bs-backdrop="static"
+     data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLiveLabel" style="display: block" aria-modal="true"
+     role="dialog">
+    <div class="modal-dialog">
+        <form action="/create_r" method="post">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLiveLabel">Создать ссылку|<a href="/">Главная</a></h5>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control" placeholder="Старая ссылка" aria-label="s" name="url1"
+                           size="30">
+                    <div style="text-align: center">⬇</div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">{{ host }}/</span>
+                        <input type="text" class="form-control" placeholder="Новая ссылка" aria-label="s" name="url2"
+                               size="30">
+                    </div>
+                    <a href="{{ href }}">{{ last }}</a>
+                </div>
+                <div class="modal-footer">
+                    <a href="allr">
+                        <button class="btn bg-success" type="button">Рабочие ссылки</button>
+                    </a>
+                    <button class="btn bg-warning" type="submit">Создать ссылку</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
